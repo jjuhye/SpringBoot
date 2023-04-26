@@ -1,0 +1,35 @@
+spring:
+  output:
+    ansi:
+      enabled: always
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/shopJPA?serverTimezone=UTC&useSSL=false
+    username: root
+    password: root
+
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    database: mysql
+    hibernate:
+      ddl-auto: update
+      #show_sql: true
+      #format_sql: true
+
+    # JDBC TimeZone Setting
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: Asia/Seoul
+logging:
+  level:
+    com.jpa.student: debug
+    #org.hibernate.SQL: debug
+    #org.hibernate.type: trace
+server:
+  port: 8087
+  servlet:
+    encoding:
+      force-response: true
